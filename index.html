@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dipriz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -11,14 +12,12 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #0f0f0f;
       color: white;
       padding-top: 60px;
     }
-
     nav {
       position: fixed;
       top: 0;
@@ -29,62 +28,52 @@
       justify-content: space-between;
       z-index: 1000;
     }
-
     nav .logo {
       font-weight: bold;
       font-size: 1.2rem;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       gap: 25px;
     }
-
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
     }
-
     nav ul li a:hover {
       color: #00ffd5;
     }
-
     section {
       padding: 80px 30px;
       max-width: 900px;
       margin: auto;
     }
-
     h2 {
       margin-bottom: 10px;
       font-size: 2rem;
     }
-
     .center {
       text-align: center;
     }
-
     .main-img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      margin: 20px auto;
+      max-width: 700px;
+      border-radius: 16px;
+      margin: 30px auto;
       display: block;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
-
     .links a {
       margin: 0 10px;
       text-decoration: none;
       color: #00ffd5;
       font-weight: 600;
     }
-
     ul li a {
       color: #00ffd5;
     }
-
     #particles-js {
       position: fixed;
       z-index: -1;
@@ -92,12 +81,34 @@
       height: 100%;
       background-color: #0f0f0f;
     }
+    .social-banner {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #4cc6f0;
+      padding: 10px;
+      border-radius: 10px 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
+    .social-banner a {
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      text-align: center;
+    }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div id="particles-js"></div>
+
+<div class="social-banner">
+  <a href="https://www.instagram.com/diprizofficial" target="_blank">🥝</a>
+</div>
 
 <nav>
   <div class="logo">Dipriz</div>
@@ -122,28 +133,36 @@
 <section id="hakkimizda">
   <h2>Hakkımızda</h2>
   <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
-  <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock’ın atmosferik yapısını ve alternatif rock’ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını oluşturmaktadır. Üretim sürecinin her aşamasını kendi kontrolünde sürdüren Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
 </section>
 
 <section id="klipler">
   <h2>Klipler</h2>
   <ul>
-    <li><a href="https://youtu.be/R6gBpmCHEkE?si=pDEZxoW-DKC11gOk" target="_blank">Karanlık Odalar (2025)</a></li>
-    <li><a href="https://youtu.be/U6bopak_qXs?si=TPZFOLvwLAGvf_A2" target="_blank">Vuslatın Sonu Yok (2024)</a></li>
-    <li><a href="https://youtu.be/FFD-30xFb7w?si=gLhxTdqFdWjcsyFC" target="_blank">Altın Yüzüğüm Kırıldı (2024)</a></li>
-    <li><a href="https://youtu.be/PfHlX01OIQ4?si=nfMeS7ooX3K-LNj3" target="_blank">Evrimin Ucunda (2024)</a></li>
-    <li><a href="https://youtu.be/hDB_ehQR7bY?si=0HUnuVkbioRgGkrq" target="_blank">Acı İçinde (2023)</a></li>
+    <li><a href="https://youtu.be/R6gBpmCHEkE" target="_blank">Karanlık Odalar (2025)</a></li>
+    <li><a href="https://youtu.be/U6bopak_qXs" target="_blank">Vuslatın Sonu Yok (2024)</a></li>
+    <li><a href="https://youtu.be/FFD-30xFb7w" target="_blank">Altın Yüzüğüm Kırıldı (2024)</a></li>
+    <li><a href="https://youtu.be/PfHlX01OIQ4" target="_blank">Evrimin Ucunda (2024)</a></li>
+    <li><a href="https://youtu.be/hDB_ehQR7bY" target="_blank">Acı İçinde (2023)</a></li>
   </ul>
 </section>
 
 <section id="diskografi">
   <h2>Diskografi</h2>
-  <ul>
-    <li>Albüm: <b>Karanlık Odalar</b> (2025)</li>
-    <li>Albüm: <b>Geceye Dair</b> (2024)</li>
-    <li>EP: <b>Rüya Günlükleri</b> (2023)</li>
-    <li>EP: <b>Sisli Yol</b> (2023)</li>
-  </ul>
+  <table style="width:100%; margin-top:10px; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="text-align:left; padding:8px; border-bottom:1px solid #555;">Albüm/EP</th>
+        <th style="text-align:left; padding:8px; border-bottom:1px solid #555;">Yıl</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="padding:6px 8px;">Vertigo, Vol. 2</td><td>2025</td></tr>
+      <tr><td style="padding:6px 8px;">Vertigo, Vol. 1</td><td>2024</td></tr>
+      <tr><td style="padding:6px 8px;">Paranoya</td><td>2024</td></tr>
+      <tr><td style="padding:6px 8px;">Psikoz</td><td>2024</td></tr>
+      <tr><td style="padding:6px 8px;">Halüsinasyon</td><td>2023</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <section id="sosyalmedya">
@@ -151,7 +170,6 @@
   <p><a href="https://www.instagram.com/diprizofficial" target="_blank">Instagram</a></p>
 </section>
 
-<!-- Particles.js -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
   particlesJS("particles-js", {
