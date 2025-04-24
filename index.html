@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dipriz, bağımsız psikedelik rock grubu. Klipler, albümler ve daha fazlası burada." />
   <title>Dipriz</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    html {scroll-behavior: smooth;}
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #0f0f0f;
       color: #ffffff;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
+      overflow-x: hidden;
+    }
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(ellipse at center, #0f0f0f 0%, #000000 100%);
+      background-image: url('https://i.gifer.com/7VE.gif');
+      background-size: cover;
+      background-attachment: fixed;
+      opacity: 0.2;
     }
     header {
       background-color: #000;
-      padding: 20px 0;
+      padding: 20px;
       position: sticky;
       top: 0;
       display: flex;
@@ -27,41 +37,10 @@
       align-items: center;
       z-index: 1000;
     }
-    .glitch {
-      color: white;
-      font-size: 24px;
-      font-weight: 700;
-      position: relative;
-    }
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-    }
-    .glitch::before {
-      animation: glitchTop 1s infinite linear alternate-reverse;
-      color: red;
-    }
-    .glitch::after {
-      animation: glitchBottom 1s infinite linear alternate-reverse;
-      color: cyan;
-    }
-    @keyframes glitchTop {
-      0% { transform: translate(0px, 0px); }
-      20% { transform: translate(-2px, -2px); }
-      40% { transform: translate(-2px, 2px); }
-      60% { transform: translate(2px, -2px); }
-      80% { transform: translate(2px, 2px); }
-      100% { transform: translate(0px, 0px); }
-    }
-    @keyframes glitchBottom {
-      0% { transform: translate(0px, 0px); }
-      20% { transform: translate(2px, 2px); }
-      40% { transform: translate(2px, -2px); }
-      60% { transform: translate(-2px, 2px); }
-      80% { transform: translate(-2px, -2px); }
-      100% { transform: translate(0px, 0px); }
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      text-shadow: 1px 0 red, -1px 0 cyan;
     }
     nav a {
       color: white;
@@ -70,12 +49,9 @@
       font-weight: 600;
     }
     section {
-      padding: 60px 0;
+      padding: 60px 20px;
       max-width: 800px;
       margin: auto;
-    }
-    h1, h2 {
-      margin-bottom: 20px;
     }
     .social-bar {
       position: fixed;
@@ -89,7 +65,7 @@
     }
     .social-bar a {
       background-color: #1db954;
-      padding: 12px;
+      padding: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,7 +74,7 @@
       font-size: 20px;
       border-radius: 4px 0 0 4px;
     }
-    img.band-photo, img.footer-img {
+    .band-photo, .footer-photo {
       display: block;
       max-width: 100%;
       height: auto;
@@ -110,22 +86,31 @@
       border-collapse: collapse;
       margin-top: 20px;
     }
-    table, th, td {
-      border: 1px solid #ffffff22;
-    }
     th, td {
+      border: 1px solid #ffffff22;
       padding: 10px;
       text-align: left;
     }
+    ul li a {
+      color: #7df;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      text-shadow: 1px 0 red, -1px 0 cyan;
+    }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
-      .social-bar a { font-size: 16px; padding: 10px; }
+      .social-bar a { font-size: 16px; padding: 12px; }
+      h1 { font-size: 32px; }
     }
   </style>
 </head>
 <body>
+  <div id="stars"></div>
   <header>
-    <div class="glitch" data-text="Dipriz">Dipriz</div>
+    <div class="logo">Dipriz</div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
@@ -133,11 +118,10 @@
     </nav>
   </header>
 
-  <img src="dipriz1.jpg" alt="Dipriz" class="band-photo" />
-
-  <section id="intro" style="text-align: center;">
+  <section style="text-align: center;">
     <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde 🪐</p>
+    <p style="margin-bottom: 30px;">Dünyalar dönmüş eksenlerde 🪐</p>
+    <img src="dipriz1.png" alt="Dipriz grup görseli" class="band-photo" />
   </section>
 
   <section id="hakkimizda">
@@ -168,9 +152,8 @@
       <tr><td>Psikoz</td><td>2024</td></tr>
       <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
+    <img src="dipriz2.png" alt="Dipriz kapak görseli" class="footer-photo" />
   </section>
-
-  <img src="dipriz2.jpg" alt="Dipriz Footer" class="footer-img" />
 
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
