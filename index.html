@@ -31,7 +31,7 @@
       font-size: 24px;
       letter-spacing: 1px;
       color: white;
-      text-shadow: 2px 0 red, -2px 0 cyan;
+      animation: glitch 2s infinite;
     }
     nav a {
       color: white;
@@ -79,17 +79,11 @@
     .glitch-title {
       font-size: 3rem;
       font-weight: 900;
-      position: relative;
       color: white;
-      animation: glitch 2s infinite;
     }
     @keyframes glitch {
-      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      20% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      40% { text-shadow: 1px 0 red, -1px 0 cyan; }
-      60% { text-shadow: -1px 0 red, 1px 0 cyan; }
-      80% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      100% { text-shadow: none; }
+      0%, 100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
     }
     @keyframes spin {
       from { transform: rotate(0deg); }
@@ -134,6 +128,8 @@
       color: orange;
       font-weight: 600;
       font-size: 1.05rem;
+      display: inline-block;
+      margin: 5px 0;
     }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
@@ -154,7 +150,7 @@
   </header>
 
   <section id="intro">
-    <h1 class="glitch-title">Dipriz</h1>
+    <h1 class="glitch-title" style="animation: none; text-shadow: none;">Dipriz</h1>
     <p style="font-size: 1.2rem;">
       Dünyalar dönmüş eksenlerde <span style="display:inline-block; animation: spin 6s linear infinite;">🪐</span>
     </p>
