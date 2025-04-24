@@ -11,10 +11,11 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f url('https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js@master/demo/media/bg.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: #0f0f0f;
       color: #ffffff;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
     header {
       background-color: #000;
@@ -26,18 +27,41 @@
       align-items: center;
       z-index: 1000;
     }
-    .logo {
-      font-weight: bold;
+    .glitch {
+      color: white;
       font-size: 24px;
-      animation: glitch 1s infinite;
+      font-weight: 700;
+      position: relative;
     }
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      20% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      40% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      60% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      80% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      100% { text-shadow: -2px 0 red, 2px 0 cyan; }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+    }
+    .glitch::before {
+      animation: glitchTop 1s infinite linear alternate-reverse;
+      color: red;
+    }
+    .glitch::after {
+      animation: glitchBottom 1s infinite linear alternate-reverse;
+      color: cyan;
+    }
+    @keyframes glitchTop {
+      0% { transform: translate(0px, 0px); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(-2px, 2px); }
+      60% { transform: translate(2px, -2px); }
+      80% { transform: translate(2px, 2px); }
+      100% { transform: translate(0px, 0px); }
+    }
+    @keyframes glitchBottom {
+      0% { transform: translate(0px, 0px); }
+      20% { transform: translate(2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(-2px, -2px); }
+      100% { transform: translate(0px, 0px); }
     }
     nav a {
       color: white;
@@ -74,7 +98,7 @@
       font-size: 20px;
       border-radius: 4px 0 0 4px;
     }
-    img.band-photo, img.bottom-image {
+    img.band-photo, img.footer-img {
       display: block;
       max-width: 100%;
       height: auto;
@@ -101,7 +125,7 @@
 </head>
 <body>
   <header>
-    <div class="logo">Dipriz</div>
+    <div class="glitch" data-text="Dipriz">Dipriz</div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
@@ -113,7 +137,7 @@
 
   <section id="intro" style="text-align: center;">
     <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde 🥠</p>
+    <p>Dünyalar dönmüş eksenlerde 🪐</p>
   </section>
 
   <section id="hakkimizda">
@@ -134,7 +158,7 @@
     </ul>
   </section>
 
-  <section id="diskogra
+  <section id="diskografi">
     <h2>Diskografi</h2>
     <table>
       <tr><th>Albüm / EP</th><th>Yıl</th></tr>
@@ -146,7 +170,7 @@
     </table>
   </section>
 
-  <img src="dipriz2.jpg" alt="Dipriz Alt" class="bottom-image" />
+  <img src="dipriz2.jpg" alt="Dipriz Footer" class="footer-img" />
 
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
