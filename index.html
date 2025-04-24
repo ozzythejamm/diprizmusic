@@ -4,65 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dipriz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
       background: url('space_background.gif') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
+
     header {
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.7);
       position: sticky;
       top: 0;
       z-index: 999;
     }
+
     .logo {
       font-size: 24px;
-      font-weight: 800;
-      color: #fff;
+      font-weight: 700;
+      color: white;
       text-shadow: 2px 0 red, -2px 0 cyan;
     }
+
     nav a {
       color: white;
-      margin-left: 20px;
       text-decoration: none;
+      margin-left: 20px;
       font-weight: 600;
     }
+
     section {
-      max-width: 900px;
-      margin: auto;
       padding: 60px 20px;
-    }
-    h1 {
-      font-size: 48px;
+      max-width: 800px;
+      margin: auto;
       text-align: center;
     }
-    .subtitle {
-      text-align: center;
+
+    .tagline {
+      font-size: 22px;
       margin-top: 10px;
-      font-size: 18px;
     }
-    .band-photo {
+
+    img.band-photo, img.footer-photo {
       max-width: 100%;
-      display: block;
-      margin: 30px auto;
       border-radius: 12px;
+      margin: 40px 0;
     }
+
     .social-bar {
       position: fixed;
       top: 50%;
@@ -70,37 +66,45 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      z-index: 1000;
+      gap: 15px;
+      z-index: 999;
     }
+
     .social-bar a {
       background-color: #1db954;
+      padding: 14px;
+      border-radius: 8px 0 0 8px;
       color: white;
-      padding: 12px;
+      text-decoration: none;
       font-size: 20px;
-      border-radius: 6px 0 0 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none;
     }
+
     table {
       width: 100%;
       margin-top: 20px;
       border-collapse: collapse;
     }
+
+    table, th, td {
+      border: 1px solid #ffffff33;
+    }
+
     th, td {
       padding: 10px;
-      border: 1px solid #ffffff22;
-      text-align: left;
     }
+
     @media (max-width: 768px) {
-      h1 { font-size: 32px; }
-      nav a { margin-left: 10px; font-size: 14px; }
+      nav a { font-size: 14px; margin-left: 10px; }
+      .social-bar a { font-size: 16px; padding: 10px; }
+      .logo { font-size: 20px; }
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">Dipriz</div>
     <nav>
@@ -111,14 +115,14 @@
   </header>
 
   <section id="intro">
-    <h1 class="glitch">Dipriz</h1>
-    <p class="subtitle">Dünyalar dönmüş eksenlerde 🫰</p>
-    <img src="dipriz1.png" alt="Dipriz grup görseli" class="band-photo">
+    <h1>Dipriz</h1>
+    <p class="tagline">Dünyalar dönmüş eksenlerde 🫰</p>
+    <img src="dipriz1.jpg" alt="Dipriz grup görseli" class="band-photo">
   </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-     <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
+    <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
     <br>
     <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını öne çıkarmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
   </section>
@@ -144,7 +148,7 @@
       <tr><td>Psikoz</td><td>2024</td></tr>
       <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
-    <img src="dipriz2.png" alt="Dipriz son görseli" class="band-photo">
+    <img src="dipriz2.jpg" alt="Sayfa sonu görseli" class="footer-photo">
   </section>
 
   <div class="social-bar">
@@ -153,5 +157,6 @@
     <a href="https://www.youtube.com/@diprizofficial" target="_blank"><i class="fab fa-youtube"></i></a>
     <a href="https://music.apple.com/tr/artist/dipriz/1701578866?l=tr" target="_blank"><i class="fab fa-apple"></i></a>
   </div>
+
 </body>
 </html>
