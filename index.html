@@ -31,7 +31,7 @@
       font-size: 24px;
       letter-spacing: 1px;
       color: white;
-      animation: glitch 2s infinite;
+      animation: glitch 3.5s infinite;
     }
     nav a {
       color: white;
@@ -83,34 +83,21 @@
     }
     @keyframes glitch {
       0%, 100% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      40% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      50% { text-shadow: none; }
+      60% { text-shadow: -1px 0 red, 1px 0 cyan; }
     }
     @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-    .stars {
+    #particles-js {
       position: fixed;
       width: 100%;
       height: 100%;
+      z-index: -1;
       top: 0;
       left: 0;
-      background: transparent;
-      z-index: -1;
-    }
-    .stars::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(white 1px, transparent 1px);
-      background-size: 3px 3px;
-      opacity: 0.15;
-      animation: moveStars 60s linear infinite;
-    }
-    @keyframes moveStars {
-      from { transform: translateY(0); }
-      to { transform: translateY(-100%); }
     }
     table {
       width: 100%;
@@ -137,9 +124,41 @@
       section { padding: 40px 10px; }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <div class="stars"></div>
+  <div id="particles-js"></div>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 1 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
   <header>
     <div class="logo">Dipriz</div>
     <nav>
