@@ -14,6 +14,7 @@
       background-color: #0f0f0f;
       color: #ffffff;
       padding: 0 20px;
+      overflow-x: hidden;
     }
     header {
       background-color: #000;
@@ -35,6 +36,8 @@
       padding: 60px 0;
       max-width: 800px;
       margin: auto;
+      position: relative;
+      z-index: 1;
     }
     h1, h2 {
       margin-bottom: 20px;
@@ -79,6 +82,14 @@
       padding: 10px;
       text-align: left;
     }
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
       .social-bar a { font-size: 16px; padding: 10px; }
@@ -86,27 +97,28 @@
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+
   <header>
     <div><strong>Dipriz</strong></div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
       <a href="#diskografi">Diskografi</a>
-      <a href="#sosyalmedya">Sosyal Medya</a>
     </nav>
   </header>
 
   <section id="intro" style="text-align: center;">
     <h1>Dipriz</h1>
     <p>Dünyalar dönmüş eksenlerde 🪐</p>
-    <p><a href="https://spotify.com" target="_blank">Spotify</a> <a href="https://youtube.com" target="_blank">YouTube</a></p>
     <img src="dipriz.JPG" alt="Dipriz" class="band-photo" />
   </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
     <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
-    <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını oluşturmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
+    <br>
+    <p>Şu ana kadar üc albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği olui olu\u015turmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını oluşturmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
   </section>
 
   <section id="klipler">
@@ -132,16 +144,35 @@
     </table>
   </section>
 
-  <section id="sosyalmedya">
-    <h2>Sosyal Medya</h2>
-    <p><a href="https://www.instagram.com/diprizofficial" target="_blank">Instagram</a></p>
-  </section>
-
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://open.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://music.youtube.com" target="_blank"><i class="fas fa-music"></i></a>
+    <a href="https://open.spotify.com/artist/12tuEgsyLen9ylnLbhhwl7?si=1QT1CRHJS16eTXqsV_Gsww" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://www.youtube.com/@diprizofficial" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://music.apple.com/tr/artist/dipriz/1701578866?l=tr" target="_blank"><i class="fab fa-apple"></i></a>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        color: { value: "#ffffff" },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 1 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
