@@ -1,35 +1,24 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dipriz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
+      background-color: #0f0f0f;
       color: white;
       position: relative;
       overflow-x: hidden;
     }
-    #background-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
-    canvas {
-      display: block;
-    }
     header {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px 40px;
       position: sticky;
       top: 0;
       display: flex;
@@ -37,35 +26,81 @@
       align-items: center;
       z-index: 1000;
     }
-    .logo {
-      font-weight: bold;
-      font-size: 24px;
-      animation: glitch 2s infinite;
+    .glitch {
+      font-size: 1.6em;
+      font-weight: 700;
+      color: white;
+      position: relative;
     }
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    .glitch::before {
+      color: red;
+      animation: glitchTop 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      color: cyan;
+      animation: glitchBottom 2s infinite linear alternate-reverse;
+    }
+    @keyframes glitchTop {
+      0% { clip-path: inset(0 0 85% 0); transform: translate(-2px, -2px); }
+      50% { clip-path: inset(0 0 50% 0); transform: translate(2px, 2px); }
+      100% { clip-path: inset(0 0 85% 0); transform: translate(-2px, -2px); }
+    }
+    @keyframes glitchBottom {
+      0% { clip-path: inset(85% 0 0 0); transform: translate(2px, 2px); }
+      50% { clip-path: inset(50% 0 0 0); transform: translate(-2px, -1px); }
+      100% { clip-path: inset(85% 0 0 0); transform: translate(2px, 2px); }
     }
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
-      font-weight: 600;
+      font-weight: 700;
     }
     section {
       padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
-    h1, h2 {
-      margin-bottom: 20px;
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+    .intro p {
+      font-size: 20px;
+      margin: 20px 0;
+    }
+    .saturn {
+      width: 24px;
+      height: 24px;
+      animation: spin 3s linear infinite;
+      vertical-align: middle;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    .stars {
+      background: url('stars.gif') repeat;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      opacity: 0.3;
     }
     .social-bar {
       position: fixed;
-      top: 50%;
       right: 0;
+      top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
@@ -73,45 +108,45 @@
       z-index: 1000;
     }
     .social-bar a {
-      background-color: #1db954;
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #1db954;
       color: white;
-      text-decoration: none;
+      padding: 12px;
+      border-radius: 6px 0 0 6px;
       font-size: 20px;
-      border-radius: 4px 0 0 4px;
     }
-    img.band-photo, img.footer-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
+    img.band-photo, img.footer-photo {
+      width: 100%;
+      max-width: 400px;
       margin: 40px auto;
-      border-radius: 12px;
+      display: block;
+      border-radius: 8px;
     }
     table {
       width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
       border-collapse: collapse;
-      margin-top: 20px;
-    }
-    table, th, td {
-      border: 1px solid #ffffff22;
     }
     th, td {
+      border: 1px solid #ccc;
       padding: 10px;
-      text-align: left;
+    }
+    ul { list-style: none; padding: 0; }
+    ul li a {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: 500;
     }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
-      .social-bar a { font-size: 16px; padding: 10px; }
+      .glitch { font-size: 1.2em; }
     }
   </style>
 </head>
 <body>
-  <canvas id="background-animation"></canvas>
+  <div class="stars"></div>
   <header>
-    <div class="logo">Dipriz</div>
+    <div class="glitch" data-text="Dipriz">Dipriz</div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
@@ -119,18 +154,17 @@
     </nav>
   </header>
 
-  <section id="intro">
+  <section class="intro">
     <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde 🫰</p>
+    <p>Dünyalar dönmüş eksenlerde <img src="saturn.gif" alt="Saturn" class="saturn"></p>
     <img src="dipriz1.jpg" alt="Dipriz grup görseli" class="band-photo">
   </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-    <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
+     <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
     <br>
     <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını öne çıkarmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
-  </section>
   </section>
 
   <section id="klipler">
@@ -154,49 +188,14 @@
       <tr><td>Psikoz</td><td>2024</td></tr>
       <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
-    <img src="dipriz2.jpg" alt="Dipriz son görsel" class="footer-image">
+    <img src="dipriz2.jpg" alt="Dipriz alt görseli" class="footer-photo">
   </section>
 
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://open.spotify.com/artist/12tuEgsyLen9ylnLbhhwl7?si=1QT1CRHJS16eTXqsV_Gsww" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://open.spotify.com/artist/12tuEgsyLen9ylnLbhhwl7" target="_blank"><i class="fab fa-spotify"></i></a>
     <a href="https://www.youtube.com/@diprizofficial" target="_blank"><i class="fab fa-youtube"></i></a>
     <a href="https://music.apple.com/tr/artist/dipriz/1701578866?l=tr" target="_blank"><i class="fab fa-apple"></i></a>
   </div>
-
-  <script>
-    const canvas = document.getElementById('background-animation');
-    const ctx = canvas.getContext('2d');
-    let width, height, stars;
-    function resizeCanvas() {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      stars = Array(150).fill().map(() => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 2
-      }));
-    }
-    function drawStars() {
-      ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'white';
-      for (let star of stars) {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-    }
-    function animateStars() {
-      for (let star of stars) {
-        star.y += 0.3;
-        if (star.y > height) star.y = 0;
-      }
-      drawStars();
-      requestAnimationFrame(animateStars);
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    animateStars();
-  </script>
 </body>
 </html>
