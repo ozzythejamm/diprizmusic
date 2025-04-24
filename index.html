@@ -3,175 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dipriz - Resmi Web Sitesi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Dipriz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
-      color: white;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      background-color: #0f0f0f;
+      color: #ffffff;
+      padding: 0 20px;
     }
     header {
-      background: black;
-      padding: 1rem 2rem;
-      position: fixed;
+      background-color: #000;
+      padding: 20px 0;
+      position: sticky;
       top: 0;
-      width: 100%;
-      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
     }
     nav a {
       color: white;
-      margin-left: 2rem;
       text-decoration: none;
-      font-weight: bold;
-    }
-    .hero {
-      text-align: center;
-      padding: 8rem 1rem 2rem;
-    }
-    .hero h1 {
-      font-size: 3rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .hero img {
-      width: 80%;
-      max-width: 600px;
-      margin: 2rem auto;
-      border-radius: 20px;
-      display: block;
+      margin-left: 20px;
+      font-weight: 600;
     }
     section {
-      padding: 4rem 2rem;
-      max-width: 900px;
+      padding: 60px 0;
+      max-width: 800px;
       margin: auto;
     }
-    .clips ul {
-      list-style: none;
-      padding: 0;
-    }
-    .clips ul li a {
-      color: #4ee6c1;
-      text-decoration: none;
-    }
-    .diskografi table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    .diskografi th, .diskografi td {
-      padding: 1rem;
-      border: 1px solid white;
-      text-align: left;
+    h1, h2 {
+      margin-bottom: 20px;
     }
     .social-bar {
       position: fixed;
-      right: 0;
       top: 50%;
+      right: 0;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      padding: 0.5rem;
-      background: #00000080;
-      border-radius: 8px 0 0 8px;
+      gap: 15px;
       z-index: 1000;
     }
     .social-bar a {
-      color: #4ee6c1;
-      font-size: 1.5rem;
-      text-align: center;
+      background-color: #1db954;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 4px 0 0 4px;
+    }
+    img.band-photo {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 40px auto;
+      border-radius: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ffffff22;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
     }
     @media (max-width: 768px) {
-      nav a {
-        margin-left: 1rem;
-        font-size: 0.9rem;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .social-bar {
-        top: auto;
-        bottom: 10%;
-        right: 1rem;
-        flex-direction: row;
-      }
+      nav a { margin-left: 10px; font-size: 14px; }
+      .social-bar a { font-size: 16px; padding: 10px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div>Dipriz</div>
+    <div><strong>Dipriz</strong></div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
       <a href="#diskografi">Diskografi</a>
+      <a href="#sosyalmedya">Sosyal Medya</a>
     </nav>
   </header>
 
-  <div class="hero">
+  <section id="intro" style="text-align: center;">
     <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde 🌌</p>
-    <a href="https://open.spotify.com/artist/..." target="_blank">Spotify</a>
-    <a href="https://youtube.com/..." target="_blank">YouTube</a>
-    <img src="dipriz.JPG" alt="Dipriz Grup Görseli" />
-  </div>
+    <p>Dünyalar dönmüş eksenlerde 🪐</p>
+    <p><a href="https://spotify.com" target="_blank">Spotify</a> <a href="https://youtube.com" target="_blank">YouTube</a></p>
+    <img src="dipriz.JPG" alt="Dipriz" class="band-photo" />
+  </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
     <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
+    <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını oluşturmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
   </section>
 
-  <section id="klipler" class="clips">
+  <section id="klipler">
     <h2>Klipler</h2>
     <ul>
-      <li><a href="https://youtu.be/R6gBpmCHEkE">Karanlık Odalar (2025)</a></li>
-      <li><a href="https://youtu.be/U6bopak_qXs">Vuslatın Sonu Yok (2024)</a></li>
-      <li><a href="https://youtu.be/FFD-30xFb7w">Altın Yüzüğüm Kırıldı (2024)</a></li>
-      <li><a href="https://youtu.be/PfHlX01OIQ4">Evrimin Ucunda (2024)</a></li>
-      <li><a href="https://youtu.be/hDB_ehQR7bY">Acı İçinde (2023)</a></li>
+      <li><a href="https://youtu.be/R6gBpmCHEkE" target="_blank">Karanlık Odalar (2025)</a></li>
+      <li><a href="https://youtu.be/U6bopak_qXs" target="_blank">Vuslatın Sonu Yok (2024)</a></li>
+      <li><a href="https://youtu.be/FFD-30xFb7w" target="_blank">Altın Yüzüğüm Kırıldı (2024)</a></li>
+      <li><a href="https://youtu.be/PfHlX01OIQ4" target="_blank">Evrimin Ucunda (2024)</a></li>
+      <li><a href="https://youtu.be/hDB_ehQR7bY" target="_blank">Acı İçinde (2023)</a></li>
     </ul>
   </section>
 
-  <section id="diskografi" class="diskografi">
+  <section id="diskografi">
     <h2>Diskografi</h2>
     <table>
-      <thead>
-        <tr>
-          <th>Albüm/EP</th>
-          <th>Yıl</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Vertigo, Vol. 2</td><td>2025</td></tr>
-        <tr><td>Vertigo, Vol. 1</td><td>2024</td></tr>
-        <tr><td>Paranoya</td><td>2024</td></tr>
-        <tr><td>Psikoz</td><td>2024</td></tr>
-        <tr><td>Halüsinasyon</td><td>2023</td></tr>
-      </tbody>
+      <tr><th>Albüm / EP</th><th>Yıl</th></tr>
+      <tr><td>Vertigo, Vol. 2</td><td>2025</td></tr>
+      <tr><td>Vertigo, Vol. 1</td><td>2024</td></tr>
+      <tr><td>Paranoya</td><td>2024</td></tr>
+      <tr><td>Psikoz</td><td>2024</td></tr>
+      <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
   </section>
 
-  <div class="social-bar">
-    <a href="https://instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://open.spotify.com/artist/..." target="_blank"><i class="fab fa-spotify"></i></a>
-    <a href="https://www.youtube.com/@Dipriz" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://music.youtube.com/channel/..." target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
+  <section id="sosyalmedya">
+    <h2>Sosyal Medya</h2>
+    <p><a href="https://www.instagram.com/diprizofficial" target="_blank">Instagram</a></p>
+  </section>
 
+  <div class="social-bar">
+    <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://open.spotify.com" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://music.youtube.com" target="_blank"><i class="fas fa-music"></i></a>
+  </div>
 </body>
 </html>
