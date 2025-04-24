@@ -4,59 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dipriz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    html {scroll-behavior: smooth;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Poppins', sans-serif;
-      background: black url('diprizspacebg.gif') no-repeat center center fixed;
+      background: url('space_background.gif') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
     }
     header {
+      padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.7);
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
     }
-    header div {
-      font-size: 28px;
-      font-weight: bold;
-      animation: glitch 2s infinite alternate;
-    }
-    @keyframes glitch {
-      0% {transform: translate(0);}
-      25% {transform: translate(1px, -1px);}
-      50% {transform: translate(-1px, 2px);}
-      75% {transform: translate(2px, 1px);}
-      100% {transform: translate(0);}
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 2px 0 red, -2px 0 cyan;
     }
     nav a {
-      color: #fff;
-      text-decoration: none;
+      color: white;
       margin-left: 20px;
+      text-decoration: none;
       font-weight: 600;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
     section {
-      padding: 60px 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
+      padding: 60px 20px;
     }
     h1 {
+      font-size: 48px;
       text-align: center;
-      font-size: 36px;
     }
-    h2 {
-      margin-bottom: 20px;
+    .subtitle {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+    .band-photo {
+      max-width: 100%;
+      display: block;
+      margin: 30px auto;
+      border-radius: 12px;
     }
     .social-bar {
       position: fixed;
@@ -65,48 +70,39 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
       z-index: 1000;
     }
     .social-bar a {
       background-color: #1db954;
+      color: white;
       padding: 12px;
+      font-size: 20px;
+      border-radius: 6px 0 0 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-decoration: none;
-      font-size: 20px;
-      border-radius: 4px 0 0 4px;
-    }
-    img.band-photo, img.band-end-photo {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 40px auto;
-      border-radius: 12px;
     }
     table {
       width: 100%;
-      border-collapse: collapse;
       margin-top: 20px;
-    }
-    table, th, td {
-      border: 1px solid #ffffff22;
+      border-collapse: collapse;
     }
     th, td {
       padding: 10px;
+      border: 1px solid #ffffff22;
       text-align: left;
     }
     @media (max-width: 768px) {
+      h1 { font-size: 32px; }
       nav a { margin-left: 10px; font-size: 14px; }
-      .social-bar a { font-size: 16px; padding: 10px; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div>Dipriz</div>
+    <div class="logo">Dipriz</div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
@@ -114,10 +110,10 @@
     </nav>
   </header>
 
-  <section id="intro" style="text-align: center;">
-    <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde 🥠</p>
-    <img src="dipriz1.jpg" alt="Dipriz" class="band-photo" />
+  <section id="intro">
+    <h1 class="glitch">Dipriz</h1>
+    <p class="subtitle">Dünyalar dönmüş eksenlerde 🫰</p>
+    <img src="dipriz1.png" alt="Dipriz grup görseli" class="band-photo">
   </section>
 
   <section id="hakkimizda">
@@ -148,9 +144,8 @@
       <tr><td>Psikoz</td><td>2024</td></tr>
       <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
+    <img src="dipriz2.png" alt="Dipriz son görseli" class="band-photo">
   </section>
-
-  <img src="dipriz2.jpg" alt="Dipriz" class="band-end-photo" />
 
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
