@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dipriz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: url('space_background.gif') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
+      background: #0f0f0f;
+      color: white;
+      position: relative;
+      overflow-x: hidden;
     }
-
+    #background-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+    canvas {
+      display: block;
+    }
     header {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       padding: 20px;
+      position: sticky;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
-
     .logo {
+      font-weight: bold;
       font-size: 24px;
-      font-weight: 700;
-      color: white;
-      text-shadow: 2px 0 red, -2px 0 cyan;
+      animation: glitch 2s infinite;
     }
-
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      50% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+    }
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
       font-weight: 600;
     }
-
     section {
       padding: 60px 20px;
       max-width: 800px;
       margin: auto;
       text-align: center;
     }
-
-    .tagline {
-      font-size: 22px;
-      margin-top: 10px;
+    h1, h2 {
+      margin-bottom: 20px;
     }
-
-    img.band-photo, img.footer-photo {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 40px 0;
-    }
-
     .social-bar {
       position: fixed;
       top: 50%;
@@ -66,45 +69,47 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      z-index: 999;
+      gap: 10px;
+      z-index: 1000;
     }
-
     .social-bar a {
       background-color: #1db954;
-      padding: 14px;
-      border-radius: 8px 0 0 8px;
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
+      padding: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 4px 0 0 4px;
     }
-
+    img.band-photo, img.footer-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 40px auto;
+      border-radius: 12px;
+    }
     table {
       width: 100%;
-      margin-top: 20px;
       border-collapse: collapse;
+      margin-top: 20px;
     }
-
     table, th, td {
-      border: 1px solid #ffffff33;
+      border: 1px solid #ffffff22;
     }
-
     th, td {
       padding: 10px;
+      text-align: left;
     }
-
     @media (max-width: 768px) {
-      nav a { font-size: 14px; margin-left: 10px; }
+      nav a { margin-left: 10px; font-size: 14px; }
       .social-bar a { font-size: 16px; padding: 10px; }
-      .logo { font-size: 20px; }
     }
   </style>
 </head>
 <body>
-
+  <canvas id="background-animation"></canvas>
   <header>
     <div class="logo">Dipriz</div>
     <nav>
@@ -116,7 +121,7 @@
 
   <section id="intro">
     <h1>Dipriz</h1>
-    <p class="tagline">Dünyalar dönmüş eksenlerde 🫰</p>
+    <p>Dünyalar dönmüş eksenlerde 🫰</p>
     <img src="dipriz1.jpg" alt="Dipriz grup görseli" class="band-photo">
   </section>
 
@@ -126,15 +131,16 @@
     <br>
     <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını öne çıkarmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
   </section>
+  </section>
 
   <section id="klipler">
     <h2>Klipler</h2>
     <ul>
-      <li><a href="https://youtu.be/R6gBpmCHEkE" target="_blank">Karanlık Odalar (2025)</a></li>
-      <li><a href="https://youtu.be/U6bopak_qXs" target="_blank">Vuslatın Sonu Yok (2024)</a></li>
-      <li><a href="https://youtu.be/FFD-30xFb7w" target="_blank">Altın Yüzüğüm Kırıldı (2024)</a></li>
-      <li><a href="https://youtu.be/PfHlX01OIQ4" target="_blank">Evrimin Ucunda (2024)</a></li>
-      <li><a href="https://youtu.be/hDB_ehQR7bY" target="_blank">Acı İçinde (2023)</a></li>
+      <li><a href="#">Karanlık Odalar (2025)</a></li>
+      <li><a href="#">Vuslatın Sonu Yok (2024)</a></li>
+      <li><a href="#">Altın Yüzüğüm Kırıldı (2024)</a></li>
+      <li><a href="#">Evrimin Ucunda (2024)</a></li>
+      <li><a href="#">Acı İçinde (2023)</a></li>
     </ul>
   </section>
 
@@ -148,7 +154,7 @@
       <tr><td>Psikoz</td><td>2024</td></tr>
       <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
-    <img src="dipriz2.jpg" alt="Sayfa sonu görseli" class="footer-photo">
+    <img src="dipriz2.jpg" alt="Dipriz son görsel" class="footer-image">
   </section>
 
   <div class="social-bar">
@@ -158,5 +164,39 @@
     <a href="https://music.apple.com/tr/artist/dipriz/1701578866?l=tr" target="_blank"><i class="fab fa-apple"></i></a>
   </div>
 
+  <script>
+    const canvas = document.getElementById('background-animation');
+    const ctx = canvas.getContext('2d');
+    let width, height, stars;
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      stars = Array(150).fill().map(() => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 2
+      }));
+    }
+    function drawStars() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'white';
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    }
+    function animateStars() {
+      for (let star of stars) {
+        star.y += 0.3;
+        if (star.y > height) star.y = 0;
+      }
+      drawStars();
+      requestAnimationFrame(animateStars);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    animateStars();
+  </script>
 </body>
 </html>
