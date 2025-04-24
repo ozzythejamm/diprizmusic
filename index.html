@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dipriz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,141 +12,114 @@
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #0f0f0f;
-      color: white;
+      color: #ffffff;
       position: relative;
       overflow-x: hidden;
     }
     header {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px 40px;
+      background-color: #1c1c1c;
+      padding: 20px;
       position: sticky;
       top: 0;
+      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
     }
-    .glitch {
-      font-size: 1.6em;
-      font-weight: 700;
+    .logo {
+      font-weight: 900;
+      font-size: 24px;
+      letter-spacing: 1px;
       color: white;
-      position: relative;
-    }
-    .glitch::before, .glitch::after {
-      content: attr(data-text);
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      overflow: hidden;
-    }
-    .glitch::before {
-      color: red;
-      animation: glitchTop 2s infinite linear alternate-reverse;
-    }
-    .glitch::after {
-      color: cyan;
-      animation: glitchBottom 2s infinite linear alternate-reverse;
-    }
-    @keyframes glitchTop {
-      0% { clip-path: inset(0 0 85% 0); transform: translate(-2px, -2px); }
-      50% { clip-path: inset(0 0 50% 0); transform: translate(2px, 2px); }
-      100% { clip-path: inset(0 0 85% 0); transform: translate(-2px, -2px); }
-    }
-    @keyframes glitchBottom {
-      0% { clip-path: inset(85% 0 0 0); transform: translate(2px, 2px); }
-      50% { clip-path: inset(50% 0 0 0); transform: translate(-2px, -1px); }
-      100% { clip-path: inset(85% 0 0 0); transform: translate(2px, 2px); }
+      text-shadow: 2px 0 red, -2px 0 cyan;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: 700;
+      margin-left: 25px;
+      font-weight: 600;
     }
     section {
       padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
       text-align: center;
-      position: relative;
-      z-index: 2;
     }
-    h1 {
-      font-size: 48px;
-      font-weight: 700;
-    }
-    .intro p {
-      font-size: 20px;
-      margin: 20px 0;
-    }
-    .saturn {
-      width: 24px;
-      height: 24px;
-      animation: spin 3s linear infinite;
-      vertical-align: middle;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0); }
-      100% { transform: rotate(360deg); }
-    }
-    .stars {
-      background: url('stars.gif') repeat;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      opacity: 0.3;
+    h1, h2 {
+      margin-bottom: 20px;
     }
     .social-bar {
       position: fixed;
-      right: 0;
       top: 50%;
+      right: 0;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 15px;
       z-index: 1000;
     }
     .social-bar a {
-      background: #1db954;
-      color: white;
+      background-color: #1db954;
       padding: 12px;
-      border-radius: 6px 0 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
       font-size: 20px;
+      border-radius: 4px 0 0 4px;
     }
     img.band-photo, img.footer-photo {
-      width: 100%;
-      max-width: 400px;
-      margin: 40px auto;
       display: block;
-      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+      margin: 40px auto;
+      border-radius: 12px;
+    }
+    .star-bg {
+      background: url("https://cdn.pixabay.com/photo/2017/01/18/17/14/space-1999597_960_720.png") repeat;
+      background-size: cover;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
     }
     table {
       width: 100%;
-      max-width: 600px;
-      margin: 20px auto;
       border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ffffff22;
     }
     th, td {
-      border: 1px solid #ccc;
       padding: 10px;
+      text-align: left;
     }
-    ul { list-style: none; padding: 0; }
-    ul li a {
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: 500;
+    .glitch-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: white;
+      text-shadow: 2px 0 red, -2px 0 cyan;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
-      .glitch { font-size: 1.2em; }
+      .social-bar a { font-size: 16px; padding: 10px; }
+      section { padding: 40px 10px; }
     }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
+  <div class="star-bg"></div>
   <header>
-    <div class="glitch" data-text="Dipriz">Dipriz</div>
+    <div class="logo">Dipriz</div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
@@ -154,27 +127,33 @@
     </nav>
   </header>
 
-  <section class="intro">
-    <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde <img src="saturn.gif" alt="Saturn" class="saturn"></p>
+  <section id="intro">
+    <h1 class="glitch-title">Dipriz</h1>
+    <p style="font-size: 1.2rem;">
+      Dünyalar dönmüş eksenlerde <span style="display:inline-block; animation: spin 6s linear infinite;">🪐</span>
+    </p>
     <img src="dipriz1.jpg" alt="Dipriz grup görseli" class="band-photo">
   </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-     <p>Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.</p>
+    <p style="max-width: 800px; margin: auto;">
+      Dipriz, 2023 yılında Oğuz Takmaz ve Doğuhan Sakın tarafından kurulmuş psikedelik - alternatif rock grubudur. İstanbul merkezli olarak faaliyet gösteren ikili, kayıt süreçlerini tamamen kendi üretim altyapıları üzerinden ve bağımsız şekilde yürütmektedir.
+    </p>
     <br>
-    <p>Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını öne çıkarmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.</p>
+    <p style="max-width: 800px; margin: 20px auto 0 auto;">
+      Şu ana kadar üç albüm ve iki EP yayımlayan Dipriz, psikedelik rock'ın atmosferik yapısını ve alternatif rock'ın dinamik karakterini bir araya getirerek özgün bir ses estetiği oluşturmayı amaçlamaktadır. Deneysel dokular ve ritmik çeşitlilik, grubun müzikal yaklaşımının temel unsurlarını öne çıkarmaktadır. Dipriz, bağımsız bir ses ve kimlik inşa etmeyi hedeflemektedir.
+    </p>
   </section>
 
   <section id="klipler">
     <h2>Klipler</h2>
-    <ul>
-      <li><a href="#">Karanlık Odalar (2025)</a></li>
-      <li><a href="#">Vuslatın Sonu Yok (2024)</a></li>
-      <li><a href="#">Altın Yüzüğüm Kırıldı (2024)</a></li>
-      <li><a href="#">Evrimin Ucunda (2024)</a></li>
-      <li><a href="#">Acı İçinde (2023)</a></li>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="https://youtu.be/R6gBpmCHEkE" target="_blank">🎬 Karanlık Odalar (2025)</a></li>
+      <li><a href="https://youtu.be/U6bopak_qXs" target="_blank">🎬 Vuslatın Sonu Yok (2024)</a></li>
+      <li><a href="https://youtu.be/FFD-30xFb7w" target="_blank">🎬 Altın Yüzüğüm Kırıldı (2024)</a></li>
+      <li><a href="https://youtu.be/PfHlX01OIQ4" target="_blank">🎬 Evrimin Ucunda (2024)</a></li>
+      <li><a href="https://youtu.be/hDB_ehQR7bY" target="_blank">🎬 Acı İçinde (2023)</a></li>
     </ul>
   </section>
 
@@ -188,12 +167,12 @@
       <tr><td>Psikoz</td><td>2024</td></tr>
       <tr><td>Halüsinasyon</td><td>2023</td></tr>
     </table>
-    <img src="dipriz2.jpg" alt="Dipriz alt görseli" class="footer-photo">
+    <img src="dipriz2.jpg" alt="Dipriz footer görseli" class="footer-photo">
   </section>
 
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://open.spotify.com/artist/12tuEgsyLen9ylnLbhhwl7" target="_blank"><i class="fab fa-spotify"></i></a>
+    <a href="https://open.spotify.com/artist/12tuEgsyLen9ylnLbhhwl7?si=1QT1CRHJS16eTXqsV_Gsww" target="_blank"><i class="fab fa-spotify"></i></a>
     <a href="https://www.youtube.com/@diprizofficial" target="_blank"><i class="fab fa-youtube"></i></a>
     <a href="https://music.apple.com/tr/artist/dipriz/1701578866?l=tr" target="_blank"><i class="fab fa-apple"></i></a>
   </div>
