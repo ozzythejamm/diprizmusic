@@ -11,10 +11,10 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #0f0f0f;
+      background: #0f0f0f url('https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js@master/demo/media/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #ffffff;
       padding: 0 20px;
-      overflow-x: hidden;
     }
     header {
       background-color: #000;
@@ -26,6 +26,19 @@
       align-items: center;
       z-index: 1000;
     }
+    .logo {
+      font-weight: bold;
+      font-size: 24px;
+      animation: glitch 1s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      20% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      40% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      60% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      80% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      100% { text-shadow: -2px 0 red, 2px 0 cyan; }
+    }
     nav a {
       color: white;
       text-decoration: none;
@@ -36,8 +49,6 @@
       padding: 60px 0;
       max-width: 800px;
       margin: auto;
-      position: relative;
-      z-index: 1;
     }
     h1, h2 {
       margin-bottom: 20px;
@@ -63,7 +74,7 @@
       font-size: 20px;
       border-radius: 4px 0 0 4px;
     }
-    img.band-photo {
+    img.band-photo, img.bottom-image {
       display: block;
       max-width: 100%;
       height: auto;
@@ -82,14 +93,6 @@
       padding: 10px;
       text-align: left;
     }
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
       .social-bar a { font-size: 16px; padding: 10px; }
@@ -97,10 +100,8 @@
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-
   <header>
-    <div><strong>Dipriz</strong></div>
+    <div class="logo">Dipriz</div>
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#klipler">Klipler</a>
@@ -108,10 +109,11 @@
     </nav>
   </header>
 
+  <img src="dipriz1.jpg" alt="Dipriz" class="band-photo" />
+
   <section id="intro" style="text-align: center;">
     <h1>Dipriz</h1>
-    <p>Dünyalar dönmüş eksenlerde 🪐</p>
-    <img src="dipriz.JPG" alt="Dipriz" class="band-photo" />
+    <p>Dünyalar dönmüş eksenlerde 🥠</p>
   </section>
 
   <section id="hakkimizda">
@@ -132,7 +134,7 @@
     </ul>
   </section>
 
-  <section id="diskografi">
+  <section id="diskogra
     <h2>Diskografi</h2>
     <table>
       <tr><th>Albüm / EP</th><th>Yıl</th></tr>
@@ -144,35 +146,13 @@
     </table>
   </section>
 
+  <img src="dipriz2.jpg" alt="Dipriz Alt" class="bottom-image" />
+
   <div class="social-bar">
     <a href="https://www.instagram.com/diprizofficial" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="https://open.spotify.com/artist/12tuEgsyLen9ylnLbhhwl7?si=1QT1CRHJS16eTXqsV_Gsww" target="_blank"><i class="fab fa-spotify"></i></a>
     <a href="https://www.youtube.com/@diprizofficial" target="_blank"><i class="fab fa-youtube"></i></a>
     <a href="https://music.apple.com/tr/artist/dipriz/1701578866?l=tr" target="_blank"><i class="fab fa-apple"></i></a>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80 },
-        size: { value: 3 },
-        color: { value: "#ffffff" },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: { enable: true, speed: 1 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" }
-        }
-      }
-    });
-  </script>
 </body>
 </html>
