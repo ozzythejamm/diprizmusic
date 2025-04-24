@@ -32,7 +32,6 @@
       letter-spacing: 1px;
       color: white;
       text-shadow: 2px 0 red, -2px 0 cyan;
-      animation: glitch 1s infinite;
     }
     nav a {
       color: white;
@@ -72,21 +71,52 @@
     }
     img.band-photo, img.footer-photo {
       display: block;
-      max-width: 80%;
+      max-width: 100%;
       height: auto;
       margin: 40px auto;
       border-radius: 12px;
     }
-    .star-bg {
-      background: url("https://cdn.pixabay.com/photo/2017/01/18/17/14/space-1999597_960_720.png") repeat;
-      background-size: cover;
+    .glitch-title {
+      font-size: 3rem;
+      font-weight: 900;
+      position: relative;
+      color: white;
+      animation: glitch 2s infinite;
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      20% { text-shadow: -2px 0 red, 2px 0 cyan; }
+      40% { text-shadow: 1px 0 red, -1px 0 cyan; }
+      60% { text-shadow: -1px 0 red, 1px 0 cyan; }
+      80% { text-shadow: 2px 0 red, -2px 0 cyan; }
+      100% { text-shadow: none; }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: transparent;
+      z-index: -1;
+    }
+    .stars::after {
+      content: '';
       position: absolute;
       width: 100%;
       height: 100%;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      opacity: 0.1;
+      background: radial-gradient(white 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity: 0.15;
+      animation: moveStars 60s linear infinite;
+    }
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(-100%); }
     }
     table {
       width: 100%;
@@ -100,31 +130,10 @@
       padding: 10px;
       text-align: left;
     }
-    .glitch-title {
-      font-size: 3.2rem;
-      font-weight: 900;
-      color: white;
-      text-shadow: 2px 0 red, -2px 0 cyan;
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes glitch {
-      0% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      20% { text-shadow: -2px 0 red, 2px 0 cyan; }
-      40% { text-shadow: 2px 2px red, -2px -2px cyan; }
-      60% { text-shadow: -2px 2px red, 2px -2px cyan; }
-      80% { text-shadow: 2px 0 red, -2px 0 cyan; }
-      100% { text-shadow: -2px 0 red, 2px 0 cyan; }
-    }
-    ul.klipler li a {
-      color: #ff914d;
+    #klipler a {
+      color: orange;
       font-weight: 600;
-      text-decoration: none;
-    }
-    ul.klipler li a:hover {
-      text-decoration: underline;
+      font-size: 1.05rem;
     }
     @media (max-width: 768px) {
       nav a { margin-left: 10px; font-size: 14px; }
@@ -134,7 +143,7 @@
   </style>
 </head>
 <body>
-  <div class="star-bg"></div>
+  <div class="stars"></div>
   <header>
     <div class="logo">Dipriz</div>
     <nav>
@@ -146,7 +155,7 @@
 
   <section id="intro">
     <h1 class="glitch-title">Dipriz</h1>
-    <p style="font-size: 1.4rem; margin-bottom: 30px">
+    <p style="font-size: 1.2rem;">
       Dünyalar dönmüş eksenlerde <span style="display:inline-block; animation: spin 6s linear infinite;">🪐</span>
     </p>
     <img src="dipriz1.jpg" alt="Dipriz grup görseli" class="band-photo">
@@ -164,13 +173,13 @@
   </section>
 
   <section id="klipler">
-    <h2>🎥 Klipler</h2>
-    <ul class="klipler" style="list-style: none; padding: 0;">
-      <li><a href="https://youtu.be/R6gBpmCHEkE?si=pDEZxoW-DKC11gOk" target="_blank">Karanlık Odalar (2025)</a></li>
-      <li><a href="https://youtu.be/U6bopak_qXs?si=TPZFOLvwLAGvf_A2" target="_blank">Vuslatın Sonu Yok (2024)</a></li>
-      <li><a href="https://youtu.be/FFD-30xFb7w?si=gLhxTdqFdWjcsyFC" target="_blank">Altın Yüzüğüm Kırıldı (2024)</a></li>
-      <li><a href="https://youtu.be/PfHlX01OIQ4?si=nfMeS7ooX3K-LNj3" target="_blank">Evrimin Ucunda (2024)</a></li>
-      <li><a href="https://youtu.be/hDB_ehQR7bY?si=0HUnuVkbioRgGkrq" target="_blank">Acı İçinde (2023)</a></li>
+    <h2>Klipler</h2>
+    <ul style="list-style: none; padding: 0;">
+      <li><a href="https://youtu.be/R6gBpmCHEkE?si=pDEZxoW-DKC11gOk" target="_blank">🎬 Karanlık Odalar (2025)</a></li>
+      <li><a href="https://youtu.be/U6bopak_qXs?si=TPZFOLvwLAGvf_A2" target="_blank">🎬 Vuslatın Sonu Yok (2024)</a></li>
+      <li><a href="https://youtu.be/FFD-30xFb7w?si=gLhxTdqFdWjcsyFC" target="_blank">🎬 Altın Yüzüğüm Kırıldı (2024)</a></li>
+      <li><a href="https://youtu.be/PfHlX01OIQ4?si=nfMeS7ooX3K-LNj3" target="_blank">🎬 Evrimin Ucunda (2024)</a></li>
+      <li><a href="https://youtu.be/hDB_ehQR7bY?si=0HUnuVkbioRgGkrq" target="_blank">🎬 Acı İçinde (2023)</a></li>
     </ul>
   </section>
 
